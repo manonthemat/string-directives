@@ -3,7 +3,7 @@ angular.module('stringdirectives', [])
   return {
     restrict: 'EA',
     link: function(scope, e, attr) {
-      var result = e.html().split('').reverse().join('');
+      var result = e.text().split('').reverse().join('');
       e.text(result);
     }
   };
@@ -12,7 +12,7 @@ angular.module('stringdirectives', [])
   return {
     restrict: 'EA',
     link: function(scope, e, attr) {
-      var orig = e.html(),
+      var orig = e.text(),
           re = /[aeiou]/,
           result = "";
       for(var i=0, l=orig.length; i<l; i++) {
